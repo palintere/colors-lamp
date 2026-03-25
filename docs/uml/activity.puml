@@ -1,0 +1,34 @@
+@startuml
+title Colors Lab - Web App\nActivity Diagram
+
+start
+
+repeat
+  :Login Page Displayed;
+  :User Enters Username and Password;
+  :User Clicks Signin Button;
+  :Username/Password Validation;
+backward: Login Error Message Displayed;
+repeat while (Username/Password Valid?) is (No) not (Yes)
+
+repeat
+  :Colors Page Displayed;
+  split
+    :User Clicks\nLogout Button;
+  split again
+    :User Enters Text to\nSearch Colors Database (Partial Match);
+    :User Clicks Search Button;
+    if (Partial Match Found?) then (Yes)
+      :Colors Meeting\nSearch Criteria Displayed;
+    else (No)
+    endif
+  split again
+    :User Enters Color\nto Add to Database;
+    :User Clicks\nAdd Button;
+    :Color Added to Database;
+  end split
+repeat while (Logout Button Clicked?) is (No) not (Yes)
+
+stop
+
+@enduml

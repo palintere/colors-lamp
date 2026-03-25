@@ -1,0 +1,33 @@
+@startuml
+title Colors Lab - Web App\nUse-Case Diagram
+
+left to right direction
+
+actor User
+
+rectangle "Colors Lab - Web App" {
+
+  ' --- Core use cases ---
+  (Login) as UC_Login
+  (Verify Username/Password) as UC_Validate
+  (Display Login Error Message) as UC_LoginError
+  (Add User-Entered Color\nto Database) as UC_Add
+  (Display Colors that meet\nSearch Criteria) as UC_ViewResults
+  (Search User-Entered Text in\nColor Database [Partial Match]) as UC_Search
+  (Logout) as UC_Logout
+
+  ' --- Authentication ---
+  UC_Login ..> UC_Validate : <<include>>
+  UC_LoginError ..> UC_Login : <<extend>> ' only if failed login
+
+  ' --- Search behavior ---
+  UC_ViewResults ..> UC_Search : <<extend>>  ' only if partial matches found
+
+  ' --- User interactions ---
+  User --> UC_Login
+  User --> UC_Search
+  User --> UC_Add
+  User --> UC_Logout
+}
+
+@enduml

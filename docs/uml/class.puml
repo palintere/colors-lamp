@@ -1,0 +1,118 @@
+@startuml
+
+title Colors Lab - Web App\nClass Diagram
+
+' =========================
+' General Shared Classes
+' =========================
+
+class Window {
+  +location.href: String
+}
+
+class Document {
+  +cookie: String
+  +value: String
+  +innerHTML: String
+  +getElementById(TagID: String): Element
+  +getElementById(TagID: String): Element
+  +getElementByTagName(TagName: String): Element
+}
+
+class LoginXMLHttpRequest {
+  +onreadystatechange: function
+  +readyState: int
+  +status: int
+  +responseText: String
+  +open(method: String, url: String, async: boolean): void
+  +setRequestHeader(header: String, value: String): void
+  +send(data: String): void
+}
+
+' =========================
+' Main Modules
+' =========================
+
+class LoginPage {
+  +userId: int
+  +firstName: String
+  +lastName: String
+  -login: String
+  -password: String
+  -url: String
+  -jsonPayload: JSON
+  -xhr: XMLHttpRequest
+  +doLogin(void): void
+  +saveCookie(void): void
+}
+
+class Logout {
+  +doLogout(void): void
+}
+
+class ColorsPage {
+  +readCookie(void): void
+}
+
+class AddColor {
+  +userId: int
+  -newColor: String
+  -url: String
+  -jsonPayload: JSON
+  -xhr: XMLHttpRequest
+  +addColor(void): void
+}
+
+class SearchColor {
+  +userId: int
+  -srch: String
+  -colorList: String
+  -url: String
+  -jsonPayload: JSON
+  -xhr: XMLHttpRequest
+  +searchColor(void): void
+}
+
+' =========================
+' Databases
+' =========================
+
+class UsersTable {
+  -ID: int
+  -FirstName: String
+  -LastName: String
+  -Login: String
+  -Password: String
+}
+
+class ColorsTable {
+  -ID: int
+  -Name: String
+  -UserID: int
+}
+
+
+' =========================
+' Relationships
+' =========================
+
+LoginPage <.. ColorsPage
+LoginPage <.. Logout
+ColorsPage <-- AddColor
+ColorsPage <-- SearchColor
+
+ColorsPage --> ColorsTable
+LoginPage --> UsersTable
+ColorsTable --> UsersTable
+
+Document --> Window
+
+ColorsPage --> Document
+LoginPage --> Document
+
+LoginPage --> LoginXMLHttpRequest
+AddColor --> LoginXMLHttpRequest
+SearchColor --> LoginXMLHttpRequest
+
+
+@enduml
