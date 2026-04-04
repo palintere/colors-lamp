@@ -1,10 +1,9 @@
-// eslint.config.cjs
 module.exports = [
   {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: 2021,
-      sourceType: "module",
+      sourceType: "script",  
       globals: { window: "readonly", document: "readonly" },
     },
     rules: {
@@ -14,7 +13,6 @@ module.exports = [
       "no-debugger": "error",
       "no-cond-assign": "error",
       "no-constant-condition": "error",
-      // …add all eslint:recommended rules here
     },
   },
 ];
