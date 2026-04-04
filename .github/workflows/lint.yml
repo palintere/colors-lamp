@@ -24,7 +24,8 @@ jobs:
       - name: Install linters
         run: |
           npm install --save-dev stylelint stylelint-config-standard@latest
-          npm install --save-dev eslint@10 @eslint/js stylelint stylelint-config-standard htmlhint
+          npm install --save-dev htmlhint
+          npm install --save-dev eslint
 
       # run HTML linter
       - name: Lint HTML files
