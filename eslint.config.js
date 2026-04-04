@@ -1,6 +1,8 @@
-// eslint.config.js at repo root
-export default [
+const js = require("@eslint/js");
+
+module.exports = [
+  js.configs.recommended,
   {
-    files: ["**/*.js"],
+    files: ["**/*.js"]
   }
 ];
