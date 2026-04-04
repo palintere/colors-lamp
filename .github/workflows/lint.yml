@@ -31,8 +31,7 @@ jobs:
       - name: Lint CSS files
         run: |
           echo "CSS files found: $(find . -name '*.css' -not -path '*/node_modules/*' | wc -l)"
-          npx stylelint "**/*.css" --reporter verbose
-          echo "CSS linting complete — no errors found"
+          npx stylelint "**/*.css" && echo "CSS linting complete — no errors found"
 
 
       - name: Lint JavaScript files
