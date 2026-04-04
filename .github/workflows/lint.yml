@@ -18,12 +18,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 20
 
       # install linters
       - name: Install linters
         run: |
-          npm install --save-dev htmlhint stylelint eslint
+          npm install --save-dev stylelint@17 stylelint-config-standard@40
+          npm install --save-dev htmlhint
+          npm install --save-dev @eslint/eslintrc@2.6.0
 
       # run HTML linter
       - name: Lint HTML files
