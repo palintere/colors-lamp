@@ -1,9 +1,9 @@
 // eslint.config.js
-import { FlatCompat } from "@eslint/eslintrc";
+const { FlatCompat } = require("@eslint/eslintrc");
 
 const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
-export default [
+module.exports = [
   ...compat.extends("eslint:recommended"),
   {
     files: ["**/*.js"]
