@@ -10,7 +10,11 @@ module.exports = [
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "error",
-      "semi": ["error", "always"],
+      "no-console": "warn",
+      "no-debugger": "error",
+      "no-cond-assign": "error",
+      "no-constant-condition": "error",
+      // …add all eslint:recommended rules here
     },
   },
 ];
