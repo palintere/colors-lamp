@@ -1,0 +1,8 @@
+{
+  "name": "eslint-test",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^10.2.0"
+  }
+}
