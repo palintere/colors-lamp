@@ -2,6 +2,5 @@
 export default [
   {
     files: ["**/*.js"],
-    extends: ["eslint:recommended"]
   }
 ];
