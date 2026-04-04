@@ -1,8 +1,11 @@
 // eslint.config.cjs
-const { FlatCompat } = require("@eslint/eslintrc");
+const { FlatCompat, getRecommendedConfig } = require("@eslint/eslintrc");
 
-// Initialize FlatCompat to use old-style configs
-const compat = new FlatCompat({ baseDirectory: process.cwd() });
+// Load the built-in recommended ESLint config
+const recommendedConfig = getRecommendedConfig();
+
+// Initialize FlatCompat with the required parameter
+const compat = new FlatCompat({ baseDirectory: process.cwd(), recommendedConfig });
 
 module.exports = [
   // Load recommended ESLint rules
