@@ -186,3 +186,9 @@ function searchColor()
 	}
 	
 }
+
+
+// package up the following object and functions to make available to code.test.js
+module.exports = {state, saveCookie, readCookie, searchColor};
+
+
