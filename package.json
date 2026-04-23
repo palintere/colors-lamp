@@ -1,12 +1,25 @@
 {
   "name": "my-web-app",
   "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "commonjs",
   "devDependencies": {
     "eslint": "^9.0.0",
     "@eslint/eslintrc": "^3.3.1",
     "stylelint": "^17.0.0",
     "stylelint-config-standard": "^40.0.0",
-    "htmlhint": "^1.0.0"
+    "htmlhint": "^1.0.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
   },
-  "type": "commonjs"
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
 }

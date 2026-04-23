@@ -1,10 +1,11 @@
 module.exports = [
   {
     files: ["**/*.js"],
+    ignores: ["**/*.test.js"],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: "script",  
-      globals: { window: "readonly", document: "readonly", XMLHttpRequest: "readonly", },
+      globals: { window: "readonly", document: "readonly", XMLHttpRequest: "readonly", module: "writable",},
     },
     rules: {
       "no-unused-vars": "warn",
